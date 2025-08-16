@@ -26,17 +26,8 @@ Key Features:
 
 *** How ***
 
-1. Tech Stack
-
        - Backend: Python (Flask)
        - Frontend: HTML, CSS (custom design with glassmorphism)
        - API/Data Source: Wikipedia API (wikipedia Python package)
 
-2. Backend (Flask + Wikipedia API)
 
-3. Frontend (HTML + CSS)
-
-    CSS Highlights:
-                   -Glassmorphism Search Bar (rounded, blurred background, glowing button).
-                   -Result Card (displays title, summary, image, and link).
-                   -Image Gallery support for multiple results
