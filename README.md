@@ -3,7 +3,7 @@
 
 *** What ***
 
-Historacle is a Python + Flask web application that allows users to search for any historical figure, event, war, or item.
+Retrospectra is a Python + Flask web application that allows users to search for any historical figure, event, war, or item.
 It fetches structured information (title, summary, link, and images) from Wikipedia and displays it in a modern, stylish interface.
 
 Key Features:
