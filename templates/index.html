@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrospectra</title>
+
+    <!-- Link to external CSS file stored in /static/css/style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Website Header -->
+    <header>
+        <div class="title">Retrospectra</div>
+    </header>
+
+    <!-- Main Section: Search Bar -->
+    <main>
+        <!-- Search form sends query to Flask backend (via POST request) -->
+        <form action="/" method="POST" class="search-container">
+            <input type="text" name="query" class="search-input" placeholder="Search historical events, people..." required>
+            <!-- Search button -->
+            <button type="submit" class="search-btn">🔍</button>
+        </form>
+    </main>
+
+    <!-- Display Result Section (only if result exists) -->
+    {% if result %}
+    <section class="result-card">
+        <div class="result-text">
+            <!-- Display title -->
+            <h2>{{ result['title'] }}</h2>
+            <!-- Display summary -->
+            <p>{{ result['summary'] }}</p>
+            <!-- Link to full Wikipedia article -->
+            <a href="{{ result['url'] }}" target="_blank">Read more on Wikipedia →</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Display Related Images Section (if images exist) -->
+    {% if images %}
+    <h2>Related Images</h2>
+    <div class="image-gallery">
+        <!-- Loop through all images and display them -->
+        {% for img in images %}
+            <img src="{{ img }}" alt="{{ result.title }}" />
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Display AI-generated "Did You Know?" facts (if available) -->
+    {% if facts %}
+    <h2>💡 Did You Know?</h2>
+    <p>{{ facts }}</p>
+    {% endif %}
+
+</body>
+</html>
